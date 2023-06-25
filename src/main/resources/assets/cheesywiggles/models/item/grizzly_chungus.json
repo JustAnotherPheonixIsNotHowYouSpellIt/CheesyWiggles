@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "cheesywiggles:item/cheesy_wiggles"
+    "layer0": "cheesywiggles:item/grizzly_chungus"
   }
 }

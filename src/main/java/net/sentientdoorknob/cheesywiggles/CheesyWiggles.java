@@ -1,8 +1,6 @@
 package net.sentientdoorknob.cheesywiggles;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -12,7 +10,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.sentientdoorknob.cheesywiggles.item.modItems;
+import net.sentientdoorknob.cheesywiggles.item.ModCreativeModeTab;
+import net.sentientdoorknob.cheesywiggles.item.ModItems;
 import org.slf4j.Logger;
 @Mod(net.sentientdoorknob.cheesywiggles.CheesyWiggles.MOD_ID)
 public class CheesyWiggles {
@@ -21,7 +20,7 @@ public class CheesyWiggles {
     public CheesyWiggles() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        modItems.register(modEventBus);
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -34,8 +33,8 @@ public class CheesyWiggles {
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
-        if (event.getTab() == CreativeModeTabs.FOOD_AND_DRINKS) {
-            event.accept(modItems.CHEESY_WIGGLES);
+        if (event.getTab() == ModCreativeModeTab.TESTMOD) {
+            event.accept(ModItems.GRIZZLY_CHUNGUS);
         }
     }
 
